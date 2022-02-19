@@ -1,0 +1,34 @@
+{
+  "name": "autograph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldhmisu/autoGraph.git"
+  },
+  "keywords": [
+    "graphql",
+    "automation"
+  ],
+  "author": "liangdonghui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ldhmisu/autoGraph/issues"
+  },
+  "homepage": "https://github.com/ldhmisu/autoGraph#readme",
+  "dependencies": {
+    "apollo-server-koa": "^3.6.3",
+    "apollo-server-testing": "^2.25.3",
+    "glob": "7.1.6",
+    "graphql": "^16.3.0",
+    "koa": "^2.13.4",
+    "mysql2": "2.2.5",
+    "nodemon": "2.0.5",
+    "pm2": "4.5.0",
+    "sequelize": "6.3.5"
+  }
+}

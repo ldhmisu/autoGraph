@@ -1,0 +1,58 @@
+DataTypes.STRING                      // VARCHAR(255)
+DataTypes.STRING(1234)                // VARCHAR(1234)
+DataTypes.STRING.BINARY               // VARCHAR BINARY
+DataTypes.TEXT                        // TEXT
+DataTypes.TEXT('tiny')                // TINYTEXT
+DataTypes.CITEXT                      // CITEXT      仅 PostgreSQL 和 SQLite.
+
+DataTypes.INTEGER                     // INTEGER
+DataTypes.BIGINT                      // BIGINT
+DataTypes.BIGINT(11)                  // BIGINT(11)
+
+DataTypes.FLOAT                       // FLOAT
+DataTypes.FLOAT(11)                   // FLOAT(11)
+DataTypes.FLOAT(11, 10)               // FLOAT(11,10)
+
+DataTypes.REAL                        // REAL        仅 PostgreSQL.
+DataTypes.REAL(11)                    // REAL(11)    仅 PostgreSQL.
+DataTypes.REAL(11, 12)                // REAL(11,12) 仅 PostgreSQL.
+
+DataTypes.DOUBLE                      // DOUBLE
+DataTypes.DOUBLE(11)                  // DOUBLE(11)
+DataTypes.DOUBLE(11, 10)              // DOUBLE(11,10)
+
+DataTypes.DECIMAL                     // DECIMAL
+DataTypes.DECIMAL(10, 2)              // DECIMAL(10,2)
+
+DataTypes.DATE                        // mysql / sqlite 为 DATETIME, postgres 为带时区的 TIMESTAMP
+DataTypes.DATE(6)                     // DATETIME(6) 适用 mysql 5.6.4+. 小数秒支持最多6位精度
+DataTypes.DATEONLY                    // DATE 不带时间.
+DataTypes.BOOLEAN                     // TINYINT(1)
+
+DataTypes.ENUM('value 1', 'value 2')  // 一个允许值为'value 1'和'value 2'的ENUM
+DataTypes.ARRAY(DataTypes.TEXT)       // 定义一个数组. 仅 PostgreSQL.
+DataTypes.ARRAY(DataTypes.ENUM)       // 定义一个ENUM数组. 仅 PostgreSQL.
+
+DataTypes.JSON                        // JSON 列. 仅 PostgreSQL, SQLite 和 MySQL.
+DataTypes.JSONB                       // JSONB 列. 仅 PostgreSQL.
+
+DataTypes.BLOB                        // BLOB (PostgreSQL 为 bytea)
+DataTypes.BLOB('tiny')                // TINYBLOB (PostgreSQL 为 bytea. 其余参数是 medium 和 long)
+
+DataTypes.UUID                        // PostgreSQL 和 SQLite 的 UUID 数据类型,MySQL 的 CHAR(36) BINARY(使用defaultValue:DataTypes.UUIDV1 或 DataTypes.UUIDV4 来让 DataTypes 自动生成 id).
+
+DataTypes.CIDR                        // PostgreSQL 的 CIDR 数据类型
+DataTypes.INET                        // PostgreSQL 的 INET 数据类型
+DataTypes.MACADDR                     // PostgreSQL 的 MACADDR 数据类型
+
+DataTypes.RANGE(DataTypes.INTEGER)    // 定义 int4range 范围. 仅 PostgreSQL.
+DataTypes.RANGE(DataTypes.BIGINT)     // 定义 int8range 范围. 仅 PostgreSQL.
+DataTypes.RANGE(DataTypes.DATE)       // 定义 tstzrange 范围. 仅 PostgreSQL.
+DataTypes.RANGE(DataTypes.DATEONLY)   // 定义 daterange 范围. 仅 PostgreSQL.
+DataTypes.RANGE(DataTypes.DECIMAL)    // 定义 numrange 范围. 仅 PostgreSQL.
+
+DataTypes.ARRAY(DataTypes.RANGE(DataTypes.DATE)) // 定义 tstzrange 范围的数组. 仅 PostgreSQL.
+
+DataTypes.GEOMETRY                    // Spatial 列. 仅 PostgreSQL (带有 PostGIS) 或 MySQL.
+DataTypes.GEOMETRY('POINT')           // 带有 geometry 类型的 spatial 列. 仅 PostgreSQL (带有 PostGIS) 或 MySQL.
+DataTypes.GEOMETRY('POINT', 4326)     // 具有 geometry 类型和 SRID 的 spatial 列. 仅 PostgreSQL (带有 PostGIS) 或 MySQL.
